@@ -44,3 +44,5 @@ D:\C#\dbAPI\dbAPI\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 D:\C#\dbAPI\dbAPI\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 D:\C#\dbAPI\dbAPI\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
 D:\C#\dbAPI\dbAPI\bin\Debug\net6.0\StackExchange.Redis.dll
+D:\C#\dbAPI\dbAPI\obj\Debug\net6.0\dbAPI.sourcelink.json
+D:\C#\dbAPI\dbAPI\bin\Debug\net6.0\Newtonsoft.Json.dll

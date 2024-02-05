@@ -25,6 +25,7 @@ namespace dbOperations{
                 options.Configuration = Configuration.GetConnectionString("RedisConnection");
                 options.InstanceName = "cache-service";
             });
+            services.AddDistributedMemoryCache();
 
             services.AddScoped<DbService>();
             services.AddSwaggerGen(c =>

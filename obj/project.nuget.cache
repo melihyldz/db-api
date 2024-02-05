@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YyV3Rs2G7M4fg+/j20hR1aBZfZa2/vKsQx7lvEECMxD/4Lfu74WTJ5L4w5LuiF2JASEj5q/4aa5CYX+abNpEUw==",
+  "dgSpecHash": "zLLkt02F1KdL+WCKqDDP5bcKzmE82wa/OFK/w+Hj2AxY+g/xdAg+IJA3T1Mcyn1Bn/3CNlq2Ie8gIEqftYgAWw==",
   "success": true,
   "projectFilePath": "D:\\C#\\dbAPI\\dbAPI\\dbAPI.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\melih\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\melih\\.nuget\\packages\\mysql.data\\6.2.5\\mysql.data.6.2.5.nupkg.sha512",
     "C:\\Users\\melih\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
+    "C:\\Users\\melih\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\melih\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "C:\\Users\\melih\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\melih\\.nuget\\packages\\stackexchange.redis\\2.6.122\\stackexchange.redis.2.6.122.nupkg.sha512",

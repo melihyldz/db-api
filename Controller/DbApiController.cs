@@ -1,6 +1,8 @@
 using dbAPI.Service;
+using dbOperations.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
 
 namespace dbOperations.Controller
 {   
@@ -18,7 +20,7 @@ namespace dbOperations.Controller
         }
 
         [HttpGet("/films")]
-        public async Task<IActionResult> getAllData(){
+        public async Task<IActionResult> GetAllData(){
 
             if(await _dbService.GetFilmAsync() == null)
                 return Ok("boş ya da hata var");
@@ -47,7 +49,10 @@ namespace dbOperations.Controller
             var cachedData = await _cache.GetStringAsync(key);
             if (cachedData == null)
                 return Ok($"Belirtilen anahtarla ({key}) eşleşen veri Redis Cache'te bulunamadı.");
-            return Ok($"Veri Redis Cache'ten alındı: {cachedData}");
+
+            var cachedList = JsonConvert.DeserializeObject<List<FilmModel>>(cachedData);
+
+            return Content(cachedData,"application/json");
         }
 
 
@@ -58,6 +63,21 @@ namespace dbOperations.Controller
                 return Ok("Key cannot be empty");
             _cache.Remove(key);
             return Ok($"Cache with {key} cleared");
+        }
+
+
+
+        [HttpGet("AddCacheByKey/{key?}")]
+        public async Task<IActionResult> AddCacheByKey(string key)
+        {
+            var films = await _dbService.GetFilmAsync();
+
+            var serializedData = JsonConvert.SerializeObject(films);
+            await _cache.SetStringAsync(key, serializedData);
+
+
+            await _cache.SetStringAsync(key, serializedData);
+            return Ok($"{key} key olarak kullanılarak veri cache eklendi");
         }
     }
 }
