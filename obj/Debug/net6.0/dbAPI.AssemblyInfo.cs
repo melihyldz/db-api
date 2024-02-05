@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dbAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bae9cbcc1faf9f934ab94636b4501f24180ea4b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f1f62bb752a71c97e17e01ffbdf8a61c0302111")]
 [assembly: System.Reflection.AssemblyProductAttribute("dbAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dbAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
