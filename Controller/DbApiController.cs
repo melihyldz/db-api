@@ -50,13 +50,11 @@ namespace dbOperations.Controller
             if (cachedData == null)
                 return Ok($"Belirtilen anahtarla ({key}) eşleşen veri Redis Cache'te bulunamadı.");
 
-            var cachedList = JsonConvert.DeserializeObject<List<FilmModel>>(cachedData);
-
             return Content(cachedData,"application/json");
         }
 
 
-        [HttpGet("DeleteCacheByKey/{key?}")]
+        [HttpGet("/DeleteCacheByKey/{key?}")]
         public async Task<IActionResult> DeleteCacheByKey(string key)
         {
             if (string.IsNullOrEmpty(key))
@@ -67,16 +65,18 @@ namespace dbOperations.Controller
 
 
 
-        [HttpGet("AddCacheByKey/{key?}")]
+        [HttpGet("/AddCacheByKey/{key?}")]
         public async Task<IActionResult> AddCacheByKey(string key)
         {
             var films = await _dbService.GetFilmAsync();
 
+            var cachedData = await _cache.GetStringAsync(key);
+            if (cachedData != null){
+                return Ok($"Bu key={key} de veri var.İlk önce veriyi sil ardından çalıştır.");
+            }
             var serializedData = JsonConvert.SerializeObject(films);
             await _cache.SetStringAsync(key, serializedData);
 
-
-            await _cache.SetStringAsync(key, serializedData);
             return Ok($"{key} key olarak kullanılarak veri cache eklendi");
         }
     }
